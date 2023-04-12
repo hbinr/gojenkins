@@ -27,14 +27,14 @@ import (
 )
 
 type Job struct {
-	Raw     *JobResponse
-	Jenkins *Jenkins
-	Base    string
+	Raw     *JobResponse `json:"raw"`
+	Jenkins *Jenkins     `json:"jenkins"`
+	Base    string       `json:"base"`
 }
 
 type JobBuild struct {
-	Number int64
-	URL    string
+	Number int64  `json:"number"`
+	URL    string `json:"url"`
 }
 
 type InnerJob struct {

@@ -21,18 +21,18 @@ import (
 )
 
 type FingerPrint struct {
-	Jenkins *Jenkins
-	Base    string
-	Id      string
-	Raw     *FingerPrintResponse
+	Jenkins *Jenkins             `json:"jenkins"`
+	Base    string               `json:"base"`
+	Id      string               `json:"id"`
+	Raw     *FingerPrintResponse `json:"raw"`
 }
 
 type FingerPrintResponse struct {
 	FileName string `json:"fileName"`
 	Hash     string `json:"hash"`
 	Original struct {
-		Name   string
-		Number int64
+		Name   string `json:"name"`
+		Number int64  `json:"number"`
 	} `json:"original"`
 	Timestamp int64 `json:"timestamp"`
 	Usage     []struct {

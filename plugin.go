@@ -20,10 +20,10 @@ import (
 )
 
 type Plugins struct {
-	Jenkins *Jenkins
-	Raw     *PluginResponse
-	Base    string
-	Depth   int
+	Jenkins *Jenkins        `json:"jenkins"`
+	Raw     *PluginResponse `json:"raw"`
+	Base    string          `json:"base"`
+	Depth   int             `json:"depth"`
 }
 
 type PluginResponse struct {

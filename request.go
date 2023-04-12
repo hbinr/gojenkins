@@ -55,8 +55,8 @@ func NewAPIRequest(method string, endpoint string, payload io.Reader) *APIReques
 }
 
 type Requester struct {
-	Base      string
-	BasicAuth *BasicAuth
+	Base      string     `json:""`
+	BasicAuth *BasicAuth `json:"basicAuth"`
 	Client    *http.Client
 	CACert    []byte
 	SslVerify bool

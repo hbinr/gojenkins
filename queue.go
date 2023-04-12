@@ -20,20 +20,20 @@ import (
 )
 
 type Queue struct {
-	Jenkins *Jenkins
-	Raw     *queueResponse
-	Base    string
+	Jenkins *Jenkins       `json:"jenkins"`
+	Raw     *queueResponse `json:"raw"`
+	Base    string         `json:"base"`
 }
 
 type queueResponse struct {
-	Items []taskResponse
+	Items []taskResponse `json:"items"`
 }
 
 type Task struct {
-	Raw     *taskResponse
-	Jenkins *Jenkins
-	Queue   *Queue
-	Base    string
+	Raw     *taskResponse `json:"raw"`
+	Jenkins *Jenkins      `json:"jenkins"`
+	Queue   *Queue        `json:"queue"`
+	Base    string        `json:"base"`
 }
 
 type taskResponse struct {

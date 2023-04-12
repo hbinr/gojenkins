@@ -22,20 +22,20 @@ import (
 )
 
 type Folder struct {
-	Raw     *FolderResponse
-	Jenkins *Jenkins
-	Base    string
+	Raw     *FolderResponse `json:"raw"`
+	Jenkins *Jenkins        `json:"jenkins"`
+	Base    string          `json:"base"`
 }
 
 type FolderResponse struct {
-	Actions     []generalObj
-	Description string     `json:"description"`
-	DisplayName string     `json:"displayName"`
-	Name        string     `json:"name"`
-	URL         string     `json:"url"`
-	Jobs        []InnerJob `json:"jobs"`
-	PrimaryView *ViewData  `json:"primaryView"`
-	Views       []ViewData `json:"views"`
+	Actions     []generalObj `json:"actions"`
+	Description string       `json:"description"`
+	DisplayName string       `json:"displayName"`
+	Name        string       `json:"name"`
+	URL         string       `json:"url"`
+	Jobs        []InnerJob   `json:"jobs"`
+	PrimaryView *ViewData    `json:"primaryView"`
+	Views       []ViewData   `json:"views"`
 }
 
 func (f *Folder) parentBase() string {

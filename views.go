@@ -21,9 +21,9 @@ import (
 )
 
 type View struct {
-	Raw     *ViewResponse
-	Jenkins *Jenkins
-	Base    string
+	Raw     *ViewResponse `json:"raw"`
+	Jenkins *Jenkins      `json:"jenkins"`
+	Base    string        `json:"base"`
 }
 
 type ViewResponse struct {

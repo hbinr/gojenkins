@@ -29,9 +29,9 @@ type Computers struct {
 }
 
 type Node struct {
-	Raw     *NodeResponse
-	Jenkins *Jenkins
-	Base    string
+	Raw     *NodeResponse `json:"raw"`
+	Jenkins *Jenkins      `json:"jenkins"`
+	Base    string        `json:"base"`
 }
 
 type NodeResponse struct {

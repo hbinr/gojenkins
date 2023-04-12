@@ -27,10 +27,10 @@ import (
 
 // Represents an Artifact
 type Artifact struct {
-	Jenkins  *Jenkins
-	Build    *Build
-	FileName string
-	Path     string
+	Jenkins  *Jenkins `json:"jenkins"`
+	Build    *Build   `json:"build"`
+	FileName string   `json:"fileName"`
+	Path     string   `json:"path"`
 }
 
 // Get raw byte data of Artifact

@@ -34,53 +34,53 @@ func init() {
 }
 
 type PipelineRun struct {
-	Job       *Job
-	Base      string
+	Job       *Job                         `json:"job"`
+	Base      string                       `json:"base"`
 	URLs      map[string]map[string]string `json:"_links"`
-	ID        string
-	Name      string
-	Status    string
-	StartTime int64 `json:"startTimeMillis"`
-	EndTime   int64 `json:"endTimeMillis"`
-	Duration  int64 `json:"durationMillis"`
-	Stages    []PipelineNode
+	ID        string                       `json:"id"`
+	Name      string                       `json:"name"`
+	Status    string                       `json:"status"`
+	StartTime int64                        `json:"startTimeMillis"`
+	EndTime   int64                        `json:"endTimeMillis"`
+	Duration  int64                        `json:"durationMillis"`
+	Stages    []PipelineNode               `json:"stages"`
 }
 
 type PipelineNode struct {
-	Run            *PipelineRun
-	Base           string
+	Run            *PipelineRun                 `json:"run"`
+	Base           string                       `json:"base"`
 	URLs           map[string]map[string]string `json:"_links"`
-	ID             string
-	Name           string
-	Status         string
-	StartTime      int64 `json:"startTimeMillis"`
-	Duration       int64 `json:"durationMillis"`
-	StageFlowNodes []PipelineNode
-	ParentNodes    []int64
+	ID             string                       `json:"id"`
+	Name           string                       `json:"name"`
+	Status         string                       `json:"status"`
+	StartTime      int64                        `json:"startTimeMillis"`
+	Duration       int64                        `json:"durationMillis"`
+	StageFlowNodes []PipelineNode               `json:"stageFlowNodes"`
+	ParentNodes    []int64                      `json:"parentNodes"`
 }
 
 type PipelineInputAction struct {
-	ID         string
-	Message    string
-	ProceedURL string
-	AbortURL   string
+	ID         string `json:"id"`
+	Message    string `json:"message"`
+	ProceedURL string `json:"proceedUrl"`
+	AbortURL   string `json:"abortUrl"`
 }
 
 type PipelineArtifact struct {
-	ID   string
-	Name string
-	Path string
-	URL  string
-	size int
+	ID   string `json:"id"`
+	Name string `json:"name"`
+	Path string `json:"path"`
+	URL  string `json:"url"`
+	size int    `json:"size"`
 }
 
 type PipelineNodeLog struct {
-	NodeID     string
-	NodeStatus string
-	Length     int64
-	HasMore    bool
-	Text       string
-	ConsoleURL string
+	NodeID     string `json:"nodeId"`
+	NodeStatus string `json:"nodeStatus"`
+	Length     int64  `json:"length"`
+	HasMore    bool   `json:"hasMore"`
+	Text       string `json:"text"`
+	ConsoleURL string `json:"consoleUrl"`
 }
 
 // utility function to fill in the Base fields under PipelineRun

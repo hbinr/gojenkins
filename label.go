@@ -17,9 +17,9 @@ package gojenkins
 import "context"
 
 type Label struct {
-	Raw     *LabelResponse
-	Jenkins *Jenkins
-	Base    string
+	Raw     *LabelResponse `json:"raw"`
+	Jenkins *Jenkins       `json:"jenkins"`
+	Base    string         `json:"base"`
 }
 
 type MODE string

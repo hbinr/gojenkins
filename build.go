@@ -25,11 +25,11 @@ import (
 )
 
 type Build struct {
-	Raw     *BuildResponse
-	Job     *Job
-	Jenkins *Jenkins
-	Base    string
-	Depth   int
+	Raw     *BuildResponse `json:"raw'"`
+	Job     *Job           `json:"job"`
+	Jenkins *Jenkins       `json:"jenkins"`
+	Base    string         `json:"base"`
+	Depth   int            `json:"depth"`
 }
 
 type parameter struct {
@@ -104,7 +104,7 @@ type TestResult struct {
 }
 
 type BuildResponse struct {
-	Actions   []generalObj
+	Actions   []generalObj `json:"actions"`
 	Artifacts []struct {
 		DisplayPath  string `json:"displayPath"`
 		FileName     string `json:"fileName"`

@@ -13,15 +13,15 @@ const (
 
 // User is a Jenkins account
 type User struct {
-	Jenkins  *Jenkins
-	UserName string
-	FullName string
-	Email    string
+	Jenkins  *Jenkins `json:"jenkins"`
+	UserName string   `json:"userName"`
+	FullName string   `json:"fullName"`
+	Email    string   `json:"email"`
 }
 
 // ErrUser occurs when there is error creating or revoking Jenkins users
 type ErrUser struct {
-	Message string
+	Message string `json:"message"`
 }
 
 func (e *ErrUser) Error() string {
